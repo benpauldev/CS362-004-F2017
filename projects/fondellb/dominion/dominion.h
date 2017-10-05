@@ -76,7 +76,7 @@ struct gameState {
 /* All functions return -1 on failure, and DO NOT CHANGE GAME STATE;
    unless specified for other return, return 0 on success */
 
-struct gameState* newGame();
+struct gameState* newGame(void);
 
 int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
 		  int k8, int k9, int k10);
@@ -127,5 +127,16 @@ int scoreFor(int player, struct gameState *state);
 int getWinners(int players[MAX_PLAYERS], struct gameState *state);
 /* Set array position of each player who won (remember ties!) to
    1, others to 0 */
+
+int adventurerCard(struct gameState *state);
+
+void council_roomCard(struct gameState *state, int handPos);
+
+void feastCard(struct gameState *state, int choice1);
+
+void smithyCard(struct gameState *state, int handPos);
+
+void baronCard(struct gameState *state,int choice1);
+
 
 #endif
