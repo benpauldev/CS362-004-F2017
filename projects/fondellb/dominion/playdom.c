@@ -10,9 +10,8 @@ int main (int argc, char** argv) {
 
   printf ("Starting game.\n");
     
-  int test = 10;
 
-  initializeGame(2, k, test, &G);
+  initializeGame(2, k, atoi(argv[1]), &G);
 
   int money = 0;
   int smithyPos = -1;
