@@ -5,14 +5,43 @@
 
 char inputChar()
 {
-    // TODO: rewrite this function
-    return ' ';
+    int number = 0;
+    char charachter;
+    number = (rand() % 95) + 32;
+    charachter = (char)number;
+    return charachter;
 }
 
 char *inputString()
 {
-    // TODO: rewrite this function
-    return "";
+    int i, j;
+    char reset[5] = "rest";
+    int myPrime = 499;
+    
+    static char target[6];
+    
+    //higher prime number yields avg. 500k iterations over 5 runs
+    //increasing to greater primes increases iterations
+    if((rand() % myPrime) == 0)
+    {
+        for(i = 0; i < 5; i++)
+        {
+            j = (rand() % 4);
+            target[i] = reset[j];
+        }
+       
+    }
+    else
+    {
+        for(i = 0; i < 5; i++)
+        {
+            //maps charachters and symbols to target string.
+            target[i] = inputChar();
+        }
+    }
+    //cats on end charachter
+    target[5] = '\0';
+    return target;
 }
 
 void testme()
