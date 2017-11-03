@@ -11,5 +11,8 @@
 
 #define STR(x) #x
 #define MY_ASSERT(x){if(!(x)){printf("TEST FAILED!   Line:%i   File:%s\n",__LINE__,__FILE__);}}
+#define MY_ASSERT_TOO(x){if(!(x)){TESTS_FAILED++;break;}}
+
+
 
 #endif /* macros_h */

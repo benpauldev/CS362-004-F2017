@@ -661,7 +661,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     if (card == adventurer)
     {
         adventurerCard(state);
-
+        return 0;
     }
     
     if(card == council_room)
@@ -1196,7 +1196,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
   return 0;
 }
         
-int adventurerCard(struct gameState *state)
+void adventurerCard(struct gameState *state)
 {
     int z = 0;
     int drawntreasure = 0;
@@ -1223,7 +1223,6 @@ int adventurerCard(struct gameState *state)
         state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
         z=z-1;
     }
-    return 0;
 }
 
 void council_roomCard(struct gameState *state, int handPos)
